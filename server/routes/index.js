@@ -1,7 +1,7 @@
 import students from '../controllers/students';
 
 const Routes = (app) => {
-    app.route('/')
+    app.route('/students')
         .get(students.list)
         .post(students.create)
 
