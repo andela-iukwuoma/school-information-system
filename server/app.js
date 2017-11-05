@@ -15,9 +15,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 
 // Parse incoming request data
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(bodyParser.json());
 
 // Require our routes into the application
 routes(app);
