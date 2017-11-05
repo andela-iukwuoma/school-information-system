@@ -20,16 +20,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 // Require our routes into the application
-// routes(app);
-
-// Setup default route that sends back a welcome message
-// app.get('*', (req, res) => {
-//     res.render('index', { title: 'Express' });
-//     // res.sendFile(path.join(__dirname, '../client/index.html'));
-// });
-
-app.get('*', (req, res) => res.status(200).send({
-    message: 'Welcome to my web application',
-}));
+routes(app);
 
 export default app;

@@ -2,7 +2,8 @@ import students from '../controllers/students';
 
 const Routes = (app) => {
     app.route('/')
-        .get({title: 'Express'})
+        .get(students.list)
 };
+
 
 export default Routes;

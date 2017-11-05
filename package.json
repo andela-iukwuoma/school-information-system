@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "babel-node ./server/app.js",
-    "start:dev": "nodemon --exec babel-node ./bin/www"
+    "start:dev": "nodemon --exec babel-node ./bin/www",
+    "db:migrate": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all"
   },
   "author": "Ignatius Ukwuoma",
   "license": "ISC",
@@ -20,7 +21,8 @@
     "morgan": "^1.9.0",
     "pg": "^7.3.0",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.22.1"
+    "sequelize": "^4.22.1",
+    "sequelize-cli": "^3.0.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
