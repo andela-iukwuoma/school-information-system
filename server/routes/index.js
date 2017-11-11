@@ -1,11 +1,11 @@
 import students from '../controllers/students';
 
 const Routes = (app) => {
-    app.route('/students')
+    app.route('/api/students')
         .get(students.list)
         .post(students.create)
 
-    app.route('/student/:studentId')
+    app.route('/api/student/:studentId')
         .get(students.retrieve)
         .put(students.update)
         .delete(students.destroy);
