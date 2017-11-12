@@ -46,6 +46,7 @@ class Students extends Component {
                         )}
                     </tbody>
                 </table>
+                <Link to="/student/add" className="btn btn-primary">Add Student</Link>
             </div>
         );
     }

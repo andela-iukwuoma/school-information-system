@@ -11,17 +11,17 @@ class StudentDetail extends Component {
 
     componentDidMount(){
         $.get(`/api/student/${this.props.params.id}`, (data) => {
-            console.log('Data', data)
             this.setState(state => ({ ...state, student: data}));
         });
     }
 
     render() {
         const {student} = this.state;
-        console.log('Student', student)
         return(
             <div className="container">
-
+                <h1>{student.lastName}, {student.firstName}</h1>
+                <p>in {student.className} started school on {new Date(student.createdAt).toDateString()}</p>
+                <Link to={`/student/${student.id}/edit`} className="btn btn-primary"> Update Student Detail</Link>
             </div>
         );
     }
