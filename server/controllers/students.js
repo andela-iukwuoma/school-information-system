@@ -20,7 +20,7 @@ export default {
     list(req, res) {
         return Student
             .findAndCountAll({
-                order: [['createdAt', 'DESC']]
+                order: [['id', 'ASC']]
             })
             .then((students) => {
                 const response = {

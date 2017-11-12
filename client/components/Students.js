@@ -21,11 +21,14 @@ class Students extends Component {
         const { students, message } = this.state;
         return (
             <div className="container students">
-                <p>{message}</p>
+                <p>
+                    {message}
+                    <Link to="/student/add" className="btn btn-primary add-student">Add Student</Link>
+                </p>
                 <table className="table table-hover">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>Reg No</th>
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Class</th>
@@ -46,7 +49,6 @@ class Students extends Component {
                         )}
                     </tbody>
                 </table>
-                <Link to="/student/add" className="btn btn-primary">Add Student</Link>
             </div>
         );
     }

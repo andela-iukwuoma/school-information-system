@@ -15,6 +15,7 @@ ReactDOM.render(
                 <IndexRoute component={Students} />
                 <Route path="/student/add" component={StudentForm} />
                 <Route path="/student/:id" component={StudentDetail} />
+                <Route path="/student/:id/edit" component={StudentForm} />
             </Route>
         </Router>
     </AppContainer>,

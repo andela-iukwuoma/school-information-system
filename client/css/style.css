@@ -5,3 +5,7 @@
 .jumbotron {
     margin-top: 70px;
 }
+
+.add-student {
+    float: right;
+}
