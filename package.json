@@ -4,7 +4,7 @@
   "description": "A basic Student Information Sytem",
   "main": "app.js",
   "scripts": {
-    "start": "babel-node ./server/app.js",
+    "start": "babel-node ./server/index.js",
     "start:dev": "nodemon --exec babel-node ./bin/www",
     "db:migrate": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all"
   },
