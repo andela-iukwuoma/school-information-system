@@ -6,3 +6,6 @@ node_modules
 
 # IDE Folder
 .idea
+
+# Local app build
+lib

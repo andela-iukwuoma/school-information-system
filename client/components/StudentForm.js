@@ -42,7 +42,7 @@ class StudentForm extends Component {
                 }
             });
         } else {
-            $.post("/api/students", )
+            $.post("/api/students", this.state.student)
                 .then(() => {
                     browserHistory.push('/')
                 })

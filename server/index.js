@@ -9,7 +9,7 @@ dotenv.config();
 
 // Setup Express App
 const app = express();
-app.use(express.static('client'));
+app.use(express.static('lib/client'));
 
 // Log requests to the console
 app.use(logger('dev'));
@@ -23,7 +23,7 @@ routes(app);
 const port = process.env.PORT || 5000;
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/index.html'));
+    res.sendFile(path.join(__dirname, '../lib/client/index.html'));
 });
 
 app.listen(port, () => {

@@ -6,21 +6,34 @@
   "scripts": {
     "start": "babel-node ./server/index.js",
     "start:dev": "nodemon --exec babel-node ./bin/www",
-    "db:migrate": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all"
+    "db:migrate": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all",
+    "build": "babel-node tools/build.js",
+    "postinstall": "npm run build",
+    "local": "npm run postinstall && npm start"
   },
   "author": "Ignatius Ukwuoma",
   "license": "ISC",
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "body-parser": "^1.18.2",
+    "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "dotenv": "^4.0.0",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "express": "^4.16.2",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
     "morgan": "^1.9.0",
+    "nodemon": "^1.12.1",
     "pg": "^7.3.0",
     "pg-hstore": "^2.3.2",
     "react": "^16.1.0",
@@ -33,14 +46,7 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
     "webpack-dev-middleware": "^1.12.0",
-    "webpack-hot-middleware": "^2.20.0",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "eslint": "^4.10.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "nodemon": "^1.12.1"
+    "webpack-hot-middleware": "^2.20.0"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
