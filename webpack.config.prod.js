@@ -1,16 +1,14 @@
 import path from 'path';
 import webpack from 'webpack';
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 process.env.NODE_ENV = 'production';
-const GLOBALS = {
-    'process.env.NODE_ENV': JSON.stringify('production')
-};
+
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 export default {
-    devtool: 'eval-cheap-module-source-map',
+    devtool: 'source-map',
     target: 'web',
     entry: path.join(__dirname, 'client/index'),
     output: {
@@ -27,10 +25,14 @@ export default {
         }),
         new CleanWebpackPlugin(['lib/client']),
         new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.DefinePlugin(GLOBALS),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
+        }),
         new ExtractTextPlugin('style.css'),
         new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
+        new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false }, sourceMap: true })
     ],
     module: {
         loaders: [
